@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name>shoppingapp</display-name>
+  <welcome-file-list>
+<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+
+<servlet>
+<servlet-name>ProductServlet</servlet-name>
+<servlet-class>servlets.ProductServlet</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>CartServlet</servlet-name>
+<servlet-class>servlets.CartServlet</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>OrderServlet</servlet-name>
+<servlet-class>servlets.OrderServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>ProductServlet</servlet-name>
+<url-pattern>/product</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>CartServlet</servlet-name>
+<url-pattern>/cart</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>OrderServlet</servlet-name>
+<url-pattern>/order</url-pattern>
+</servlet-mapping>
+
+<session-config>
+<session-timeout>60
+</session-timeout>
+</session-config>
+
+<security-constraint>
+<web-resource-collection>
+<web-resource-name>Protected Area</web-resource-name>
+<url-pattern>/admin/*</url-pattern>
+</web-resource-collection>
+</security-constraint>
+
+<login-config>
+<auth-method>FORM</auth-method>
+<form-login-config>
+<form-login-page>/admin/login.jsp</form-login-page>
+<form-error-page>/admin/loginerror.jsp</form-error-page>
+</form-login-config>
+</login-config>
+
+</web-app>

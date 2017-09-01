@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Loader delegate="true"/>
+<Resource
+		logAbandoned="true"
+		removeAbandoned="true"
+		removeAbandonedTimeout="60"
+        name="jdbc/cs532_finalpj"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxWait="10"
+        maxIdle="20"
+        username="guest"
+        driverClassName="com.mysql.jdbc.Driver"
+        password="guestpswd"
+        url="jdbc:mysql://localhost/cs532_finalpj"/>
+</Context>
